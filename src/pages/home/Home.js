@@ -5,6 +5,7 @@ import { useCollection } from '../../hooks/useCollection'
 // components
 import PersonalInfoForm from './PersonalInfoForm'
 import PersonalInfoList from './PersonalInfoList'
+import EditUsername from './EditUsername'
 
 export default function Home() {
     const { user } = useAuthContext()
@@ -22,6 +23,9 @@ export default function Home() {
         </div>
         <div className={styles.sidebar}>
           <PersonalInfoForm uid={user.uid}/>
+        </div>
+        <div className={styles.sidebar}>
+          <EditUsername uid={user.uid}/>
         </div>
       </div>
     )
