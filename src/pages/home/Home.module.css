@@ -54,8 +54,8 @@
     margin: 10px;
   }
 
-  /* personalinfo */
-.personalinfo li {
+  /* course */
+.course li {
   margin: 30px auto;
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
@@ -66,18 +66,24 @@
   overflow: hidden;
   border-left: 4px solid #1f9751;
 }
-.personalinfo .name {
+.course ul {
+  list-style: none;
+  height: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.course .name {
   color: #777;
+  font-weight: bold;
   font-size: 1.4em;
 }
-.personalinfo .phonenumber {
+.course .coursecode {
   margin-left: auto;
   margin-right: 40px;
   color: #777;
-  font-weight: bold;
   font-size: 1.6em;
 }
-.personalinfo button {
+.course button {
   position: absolute;
   top: 0;
   right:0;

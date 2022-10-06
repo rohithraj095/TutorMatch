@@ -26,7 +26,7 @@ export default function EditUsername({ uid }) {
 
   return (
     <>
-      <h3>Edit Username</h3>
+      <h4>Edit Username</h4>
       <form onSubmit={handleSubmit}>
         <label>
           <span>new username:</span>
