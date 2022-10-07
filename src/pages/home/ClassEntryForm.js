@@ -5,6 +5,7 @@ import { useFirestore } from '../../hooks/useFirestore'
 export default function ClassEntryForm({ uid }) {
   const [name, setName] = useState('')
   const [courseCode, setCourseCode] = useState('')
+  const [isTutor, setIsTutor] = useState('')
   const { addDocument, response } = useFirestore('Classes')
 
   const handleSubmit = (e) => {
@@ -12,7 +13,8 @@ export default function ClassEntryForm({ uid }) {
     addDocument({
         uid, 
         name, 
-        courseCode
+        courseCode,
+        isTutor
       })
   }
 
@@ -20,6 +22,7 @@ export default function ClassEntryForm({ uid }) {
     if (response.success) {
       setName('')
       setCourseCode('')
+      setIsTutor('')
     }
   }, [response.success])
 
@@ -28,13 +31,17 @@ export default function ClassEntryForm({ uid }) {
       <h4>Add class</h4>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Course Name:</span>
+          <span>Course Name:</span>   
           <input 
             type="text"
             required
             onChange={(e) => setName(e.target.value)} 
             value={name} 
           />
+        </label>    
+        <label>
+        <input type="radio" value="Need Tutoring" name="tutor" onChange= {(e) => setIsTutor(e.target.value)} />I require tutoring in this class
+        <input type="radio" value="Can Tutor Others" name="tutor" onChange= {(e) => setIsTutor(e.target.value)} /> I can tutor others in this class
         </label>
         <label>
           <span>Course Code:</span>
@@ -45,6 +52,8 @@ export default function ClassEntryForm({ uid }) {
             value={courseCode} 
           />
         </label>
+        
+
         <button>Add Class</button>
       </form>
     </>
