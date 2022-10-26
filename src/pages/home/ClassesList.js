@@ -13,6 +13,7 @@ export default function ClassesList({ Classes }) {
         <li key={classes.id}>
         <p className={styles.name}>{classes.name}</p>
         <p className={styles.coursecode}>{classes.courseCode}</p>
+        <p className={styles.coursecode}>{classes.isTutor}</p>
         <button onClick={() => deleteDocument(classes.id)}>x</button>
       </li>
       ))}

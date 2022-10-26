@@ -7,9 +7,7 @@ import { auth } from '../firebase/config'
 //     reauthenticateWithCredential, } from 'firebase/auth'
 
 export const useEditEmail = () => {
-  const { user, 
-    EmailAuthProvider,  
-    reauthenticateWithCredential } = useAuthContext()
+  const { user } = useAuthContext()
  
   
   const editEmail = async (email, providedPassword) => {
