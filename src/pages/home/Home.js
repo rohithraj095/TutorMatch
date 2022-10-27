@@ -14,7 +14,7 @@ import AddBio from './AddBio'
 
 export default function Home() {
     const { user } = useAuthContext()
-    const [cellNo, setCellNo] = useState('')
+    const [cellNo, setCellNo] = useState('1234567890')
     const [pBio, setPbio] = useState('')
     const { documents, error } = useCollection(
         'Classes',
@@ -52,7 +52,7 @@ export default function Home() {
             {documents && <ClassesList Classes={documents} />}
         </div>
         <div className={styles.sidebar}>
-          <ClassEntryForm uid={user.uid}/>
+          <ClassEntryForm uid={user.uid} userName={user.displayName}/>
         </div>
         <div className={styles.sidebar}>
           <EditUsername uid={user.uid}/>

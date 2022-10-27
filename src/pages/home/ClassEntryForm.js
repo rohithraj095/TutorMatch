@@ -2,16 +2,19 @@ import { useState, useEffect } from 'react'
 //import PhoneInput from 'react-phone-input-2'
 import { useFirestore } from '../../hooks/useFirestore'
 
-export default function ClassEntryForm({ uid }) {
+export default function ClassEntryForm({ uid, userName }) {
   const [name, setName] = useState('')
+  //const [userName, setuserName] = useState('')
   const [courseCode, setCourseCode] = useState('')
   const [isTutor, setIsTutor] = useState('')
   const { addDocument, response } = useFirestore('Classes')
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     addDocument({
-        uid, 
+        uid,
+        userName,
         name, 
         courseCode,
         isTutor

@@ -3,7 +3,7 @@ import { useCollection } from '../../hooks/useCollection'
 // styles
 import './AllUsers.css'
 
-export default function OnlineUsers() {
+export default function AllUsers() {
   const { isPending, error, documents } = useCollection('users')
 
   return (

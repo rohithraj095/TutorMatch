@@ -83,6 +83,13 @@
   color: #777;
   font-size: 1.6em;
 }
+
+.course .username {
+  margin-left: auto;
+  margin-right: 40px;
+  color: rgb(161, 150, 222);
+  font-size: 1.6em;
+}
 .course button {
   position: absolute;
   top: 0;
