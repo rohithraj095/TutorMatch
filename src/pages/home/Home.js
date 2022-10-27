@@ -18,8 +18,7 @@ export default function Home() {
     const [pBio, setPbio] = useState('')
     const { documents, error } = useCollection(
         'Classes',
-        null,
-        ["createdAt","desc"]
+        ["uid","==", user.uid]
     )
     console.log("second call")
     const tO  = useCollectionSimple(
