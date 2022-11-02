@@ -5,7 +5,7 @@ import { useFirestore } from '../../hooks/useFirestore'
 export default function ClassEntryForm({ uid, userName }) {
   const [name, setName] = useState('')
   //const [userName, setuserName] = useState('')
-  const [courseCode, setCourseCode] = useState('')
+  const [courseDept, setCourseDept] = useState('')
   const [isTutor, setIsTutor] = useState('')
   const { addDocument, response } = useFirestore('Classes')
 
@@ -16,7 +16,7 @@ export default function ClassEntryForm({ uid, userName }) {
         uid,
         userName,
         name, 
-        courseCode,
+        courseDept,
         isTutor
       })
   }
@@ -24,7 +24,7 @@ export default function ClassEntryForm({ uid, userName }) {
   useEffect(() => {
     if (response.success) {
       setName('')
-      setCourseCode('')
+      setCourseDept('')
       setIsTutor('')
     }
   }, [response.success])
@@ -34,7 +34,7 @@ export default function ClassEntryForm({ uid, userName }) {
       <h4>Add class</h4>
       <form onSubmit={handleSubmit}>
         <label>
-          <span>Course Name:</span>   
+          <span>Course Code/Name:</span>   
           <input 
             type="text"
             required
@@ -43,16 +43,16 @@ export default function ClassEntryForm({ uid, userName }) {
           />
         </label>    
         <label>
-        <input type="radio" value="Need Tutoring" name="tutor" onChange= {(e) => setIsTutor(e.target.value)} />I require tutoring in this class
-        <input type="radio" value="Can Tutor Others" name="tutor" onChange= {(e) => setIsTutor(e.target.value)} /> I can tutor others in this class
+        <input type="radio" value="Need Tutor" name="tutor" onChange= {(e) => setIsTutor(e.target.value)} />I require tutoring in this class
+        <input type="radio" value="Tutor Others" name="tutor" onChange= {(e) => setIsTutor(e.target.value)} /> I can tutor others in this class
         </label>
         <label>
-          <span>Course Code:</span>
+          <span>Course Dept.:</span>
           <input
             type="text"
             required
-            onChange={(e) => setCourseCode(e.target.value)} 
-            value={courseCode} 
+            onChange={(e) => setCourseDept(e.target.value)} 
+            value={courseDept} 
           />
         </label>
         
