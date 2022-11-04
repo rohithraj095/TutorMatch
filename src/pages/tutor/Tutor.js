@@ -6,7 +6,7 @@ import { useCollection, useCollectionSimple } from '../../hooks/useCollection'
 import { useState } from 'react'
 
 // components
-import ClassesList from '../home/ClassesList'
+import ClassesListNoDel from '../home/ClassListNoDel'
 
 import Filter from './Filter'
 
@@ -48,7 +48,7 @@ export default function Tutor() {
         <div className={styles.content}>
             {error && <p>{error}</p>}
             {documents && <Filter currentFilter={currentFilter} changeFilter={changeFilter}/>}
-            {projects && <ClassesList Classes={projects} />}
+            {projects && <ClassesListNoDel Classes={projects} />}
         </div>
       </div>
     )
