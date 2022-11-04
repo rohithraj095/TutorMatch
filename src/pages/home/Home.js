@@ -11,6 +11,7 @@ import EditEmail from './EditEmail'
 import ClassEntryForm from './ClassEntryForm'
 import AddPhone from './AddPhone'
 import AddBio from './AddBio'
+import AddTimeSlot from './AddTimeSlot'
 
 export default function Home() {
     const { user } = useAuthContext()
@@ -62,6 +63,9 @@ export default function Home() {
         </div>
         <div className={styles.sidebar}>
           <AddBio uid={user.uid}/>
+        </div>
+        <div className={styles.sidebar}>
+          <AddTimeSlot uid={user.uid}/>
         </div>
         <div className={styles.sidebar}>
           <EditEmail uid={user.uid}/>
