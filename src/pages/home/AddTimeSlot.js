@@ -15,6 +15,10 @@ export default function AddTimeSlot({ uid }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("times updated " + beginTime + endTime);
+    if (beginTime < 0 || endTime > 24) {
+        alert("times are out of range");
+        return;
+    }
     try {
         addTimeSlot(beginTime, endTime);
     }
