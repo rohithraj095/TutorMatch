@@ -19,3 +19,30 @@
     align-items: center;
     margin: 20px auto;
   }
+  .fixed {
+    width: 700px;
+  }
+  .flex-item {
+    flex-grow: 1;
+  }
+  .float-container {
+    padding: 2px;
+}
+
+.float-child {
+    width: 600px;
+    float: left;
+    padding: 2px;
+}
+.user-list .button1 {
+  background-color: #4CAF50;
+  color: black;
+  padding: 04px 05px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.user-list a:hover, a:active {
+  background-color: green;
+}

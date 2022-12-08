@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import SendEmail from '../pages/allUsers/SendEmail'
 
 // styles & images
 import "./Sidebar.css"
@@ -26,6 +27,13 @@ export default function Sidebar() {
             </li>
           </ul>
         </nav>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h4>&emsp;Contact Us:</h4>
+        <br></br>
+        <div style={{right:'100px', top:'2033px'}}><SendEmail/></div>
       </div>
     </div>
   )

@@ -5,10 +5,11 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 //import PhoneInput from 'react-phone-input-2'
 import { useFirestore } from '../../hooks/useFirestore'
 
+// styles
+import './AllUsers.css'
 
 
-
-export default function AddRating({ uid }) {
+export default function AddRating({ uid, Username }) {
   const { user } = useAuthContext()
   const [rating, changeRating] = useState('')
   const [review, changeReview] = useState('')
@@ -42,8 +43,9 @@ export default function AddRating({ uid }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <div>
         <label>
-          <span>Add Rating:</span>
+          <span>&emsp;&emsp;&emsp;Add Rating for {Username}: </span>
           <input 
             type="text"
             required
@@ -52,8 +54,10 @@ export default function AddRating({ uid }) {
           />
         </label>
         <button>Add Rating</button>
+        </div>
+        <div>
         <label>
-          <span>Add Review:</span>
+          <span>&emsp;&emsp;&emsp;Add Review for {Username}: </span>
           <input 
             type="text"
             required
@@ -62,6 +66,7 @@ export default function AddRating({ uid }) {
           />
         </label>
         <button>Add Review</button>
+        </div>
       </form>
     </>
   )

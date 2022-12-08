@@ -32,7 +32,8 @@ export const useSignup = () => {
       await res.user.updateProfile({ displayName })
 
       projectFirestore.collection("users").doc(res.user.uid).set({
-        name: res.user.displayName
+        name: res.user.displayName, 
+        email: res.user.email
       })
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
