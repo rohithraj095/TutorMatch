@@ -33,7 +33,8 @@ export const useSignup = () => {
 
       projectFirestore.collection("users").doc(res.user.uid).set({
         name: res.user.displayName, 
-        email: res.user.email
+        email: res.user.email,
+        savedUsers: ""
       })
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })

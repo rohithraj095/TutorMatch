@@ -79,7 +79,7 @@ export default function Home() {
           <ul>
             <li><b>Email: {user.email}</b></li>
             <li><b>Phone #: {cellNo} </b></li>
-            <li><b>Hidden: {user.hideProfile==true} </b></li>
+            <li><b>Saved Tutor/Tutee: {user.savedUsers} </b></li>
             <li><p><b>Personal bio:</b> {pBio}</p></li>
           </ul>
         </div>
