@@ -64,7 +64,7 @@ export default function AllUsers() {
       {isPending && <div>Loading users...</div>}
       {error && <div>{error}</div>}
       {documents && documents.map(user => (
-        !filterEnabled ? (
+        !filterEnabled && (user.hideProfile==="false" || user.hideProfile==null) ? (
           <div key={user.id} className="user-list-item">
               <span><button className="btn">Connect</button>&emsp;{user.name}&emsp;&emsp;&emsp;&emsp;{user.cellNum}&emsp;&emsp;&emsp;{user.personalBio}&emsp;&emsp;&emsp;
               {(user.totalRating)}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{user.beginTime}&emsp;&emsp;&emsp;&emsp;
@@ -73,7 +73,7 @@ export default function AllUsers() {
               </span>
           </div>
         ) :
-        isBetween(filterTime, user.beginTime, user.endTime) ? (
+        isBetween(filterTime, user.beginTime, user.endTime) && (user.hideProfile==="false" || user.hideProfile==null) ? (
           <div key={user.id} className="user-list-item">
               <span><button className="btn">Connect</button>&emsp;{user.name}&emsp;&emsp;&emsp;&emsp;{user.cellNum}&emsp;&emsp;&emsp;{user.personalBio}&emsp;&emsp;&emsp;
               {(user.totalRating)}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{user.beginTime}&emsp;&emsp;&emsp;&emsp;

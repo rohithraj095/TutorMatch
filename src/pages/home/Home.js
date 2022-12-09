@@ -12,6 +12,7 @@ import ClassEntryForm from './ClassEntryForm'
 import AddPhone from './AddPhone'
 import AddBio from './AddBio'
 import AddTimeSlot from './AddTimeSlot'
+import HideProfile from './HideProfile'
 
 export default function Home() {
     const { user } = useAuthContext()
@@ -71,10 +72,14 @@ export default function Home() {
           <EditEmail uid={user.uid}/>
         </div>
         <div className={styles.sidebar}>
+          <HideProfile uid={user.uid} />
+        </div>
+        <div className={styles.sidebar}>
           <h2>My info:</h2>
           <ul>
             <li><b>Email: {user.email}</b></li>
             <li><b>Phone #: {cellNo} </b></li>
+            <li><b>Hidden: {user.hideProfile==true} </b></li>
             <li><p><b>Personal bio:</b> {pBio}</p></li>
           </ul>
         </div>
